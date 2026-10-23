@@ -7,3 +7,38 @@
 .main-nav{display:flex;align-items:center;justify-content:center;gap:clamp(12px,2vw,28px);margin:0 auto}.main-nav a{position:relative;text-decoration:none;color:#45636d;font-size:11px;font-weight:700;white-space:nowrap;padding:25px 0}.main-nav a:hover,.main-nav a:focus{color:var(--teal)}.main-nav a:first-child:after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;border-radius:3px 3px 0 0;background:var(--teal)}
 @media(max-width:950px){.main-nav{gap:12px}.main-nav a{font-size:10px}.topbar{padding:0 18px}.brand small{display:none}}
 @media(max-width:700px){.main-nav{display:none}.topbar{justify-content:space-between}}
+
+/* Compatibility and layout fixes — visual only; no JavaScript behavior changed */
+html, body { min-height: 100%; }
+body { overflow-x: hidden; }
+.app-shell { max-width: 1440px; }
+.topbar { gap: 18px; }
+.main-nav { flex: 1 1 auto; min-width: 0; }
+.main-nav a { display: inline-flex; align-items: center; }
+main, .workspace, .map-section, .workspace-grid, .panel { min-width: 0; }
+.preview video, .preview img, .preview canvas { max-width: 100%; max-height: 100%; }
+.preview video[style*="display: block"], .preview img[style*="display: block"], .preview canvas[style*="display: block"] { display: block; }
+button, input, select { font: inherit; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #e9bd45; outline-offset: 3px; }
+#resultArea { overflow-wrap: anywhere; }
+#netraMap { position: relative; z-index: 1; }
+.leaflet-container { font-family: 'DM Sans', sans-serif; }
+img { max-width: 100%; }
+@media (max-width: 950px) {
+  .topbar { gap: 10px; }
+  .main-nav { overflow-x: auto; scrollbar-width: thin; }
+  .main-nav a { padding-top: 22px; padding-bottom: 22px; }
+}
+@media (max-width: 700px) {
+  .topbar { position: relative; }
+  .main-nav { display: none; }
+  main { padding: 14px; }
+  .workspace-grid { grid-template-columns: minmax(0, 1fr); }
+  .panel { width: 100%; }
+  .camera-actions .btn { min-width: 0; }
+  .map-search-row { min-width: 0; }
+  .map-search-row input { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
