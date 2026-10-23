@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#07111f">
+  <meta name="theme-color" content="#126b70">
   <title>NETRA AI — See the world differently</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
@@ -18,11 +18,14 @@
         <span class="brand-mark">◉</span>
         <span>NETRA<span class="brand-ai"> AI</span><small>VISION ASSISTANT</small></span>
       </a>
-      <span class="status-pill"><span class="status-dot"></span> Browser prototype</span>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home">Home</a><a href="#workspace">Explore Camera</a><a href="#ask-netra">Ask NETRA</a><a href="#mapTitle">Plan a Route</a><a href="#history">History</a><a href="#accessibility">Accessibility</a>
+      </nav>
+      <span class="status-pill"><span class="status-dot"></span> <span>Prototype</span></span>
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero" id="home">
         <div class="hero-copy">
           <p class="eyebrow">YOUR WORLD, MORE ACCESSIBLE</p>
           <h1>See beyond<br><span>what you see.</span></h1>
@@ -36,7 +39,7 @@
         </div>
       </section>
 
-      <section class="workspace">
+      <section class="workspace" id="workspace">
         <div class="section-heading">
           <div><p class="eyebrow">LIVE WORKSPACE</p><h2>Vision assistant</h2></div>
           <span id="modelStatus" class="model-status"><span class="mini-spinner"></span> Loading AI model…</span>
@@ -65,7 +68,7 @@
             <p class="helper-text">Camera access requires permission and HTTPS. Object detection runs in your browser; the smaller-frame mode is tuned to reduce mobile processing time.</p>
           </article>
 
-          <article class="panel results-panel">
+          <article class="panel results-panel" id="ask-netra">
             <div class="panel-heading"><div><span class="step-number">02</span><h3>What NETRA sees</h3></div><span class="count-badge" id="objectCount">0 objects</span></div>
             <div class="result-area" id="resultArea" aria-live="polite">
               <div class="result-empty"><div class="scan-icon">⌕</div><strong>Ready to explore</strong><p>Start the camera or upload an image, then select <b>Detect objects</b>.</p></div>
@@ -123,13 +126,13 @@
         </article>
       </section>
 
-      <section class="feature-row">
+      <section class="feature-row" id="accessibility">
         <div class="feature-card"><span>01</span><div class="feature-icon">⌖</div><h3>Object awareness</h3><p>Detect common objects such as people, chairs, bottles and more with a browser AI model.</p></div>
         <div class="feature-card"><span>02</span><div class="feature-icon">♫</div><h3>Voice feedback</h3><p>Hear detection results through your device's built-in text-to-speech support.</p></div>
         <div class="feature-card"><span>03</span><div class="feature-icon">◇</div><h3>Built for access</h3><p>High contrast, clear labels, keyboard-friendly controls and responsive layout.</p></div>
       </section>
 
-      <div class="disclaimer"><span>ⓘ</span><p><b>Prototype safety note:</b> NETRA AI is a demonstration, not a certified navigation or safety device. Do not rely on its detections to cross roads or avoid hazards.</p></div>
+      <div class="disclaimer" id="history"><span>ⓘ</span><p><b>Prototype safety note:</b> NETRA AI is a demonstration, not a certified navigation or safety device. Do not rely on its detections to cross roads or avoid hazards.</p></div>
     </main>
     <footer><span>◉ NETRA AI</span><span>Accessibility prototype · Camera AI runs in your browser · Map uses OpenStreetMap</span></footer>
   </div>
